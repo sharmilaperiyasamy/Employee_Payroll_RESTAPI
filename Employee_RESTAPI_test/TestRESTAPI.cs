@@ -10,7 +10,7 @@ namespace Employee_RESTAPI_test
     {
         //uc1 get method
         RestClient restClient;
-        [Test]
+        //[Test]
         public void EmployeeDetails_GETmethod()
         {
             restClient = new RestClient("http://localhost:3000");
@@ -25,7 +25,7 @@ namespace Employee_RESTAPI_test
             }
         }
 
-        [Test]
+        //[Test]
         //uc2 post method
         public void EmployeeDetails_POSTmethod()
         {
@@ -43,7 +43,7 @@ namespace Employee_RESTAPI_test
             Assert.AreEqual("26000", emp.salary);
             Console.WriteLine(response.Content);
         }
-        [Test]
+        //[Test]
         public void addingMultiplevalues()
         {
             restClient = new RestClient("http://localhost:3000");
@@ -63,7 +63,7 @@ namespace Employee_RESTAPI_test
             });
         }
         //uc4-update the existing values
-        [Test]
+       // [Test]
         public void EmployeeDetails_UPDATEmethod()
         {
             restClient = new RestClient("http://localhost:3000");
@@ -82,6 +82,17 @@ namespace Employee_RESTAPI_test
             Assert.AreEqual(body.salary, emp.salary);
             Console.WriteLine(response.Content);
             //(id 8 has been changed using postman)
+        }
+        [Test]
+        //uc5 delete method
+        public void EmployeeDetails_DELETEmethod()
+        {
+            restClient = new RestClient("http://localhost:3000");
+            RestRequest request = new RestRequest("/employees/8", Method.Delete);
+            RestResponse response = restClient.Execute(request);
+            Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
+            Console.WriteLine(response.Content);
+            //(id 7 has been deleted using postman)
         }
     }
 }
