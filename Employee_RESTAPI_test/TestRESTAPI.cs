@@ -62,5 +62,26 @@ namespace Employee_RESTAPI_test
                 Console.WriteLine(response.Content);
             });
         }
+        //uc4-update the existing values
+        [Test]
+        public void EmployeeDetails_UPDATEmethod()
+        {
+            restClient = new RestClient("http://localhost:3000");
+            RestRequest request = new RestRequest("/employees/7", Method.Put);
+            var body = new Employee_Model
+            {
+                id = 7,
+                name = "Kamali",
+                salary = "31000"
+            };
+            request.AddParameter("application/json", body, ParameterType.RequestBody);
+            RestResponse response = restClient.Execute(request);
+            Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
+            Employee_Model emp = JsonConvert.DeserializeObject<Employee_Model>(response.Content);
+            Assert.AreEqual(body.name, emp.name);
+            Assert.AreEqual(body.salary, emp.salary);
+            Console.WriteLine(response.Content);
+            //(id 8 has been changed using postman)
+        }
     }
 }
