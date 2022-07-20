@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employee_RESTAPI", "Employee_RESTAPI.csproj", "{C3F50AA0-EFEB-41EE-972C-534B619976E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employee_RESTAPI_test", "..\Employee_RESTAPI_test\Employee_RESTAPI_test.csproj", "{9061EE77-8247-4070-A95F-C0A0BA690FE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3F50AA0-EFEB-41EE-972C-534B619976E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3F50AA0-EFEB-41EE-972C-534B619976E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3F50AA0-EFEB-41EE-972C-534B619976E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3F50AA0-EFEB-41EE-972C-534B619976E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9061EE77-8247-4070-A95F-C0A0BA690FE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9061EE77-8247-4070-A95F-C0A0BA690FE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9061EE77-8247-4070-A95F-C0A0BA690FE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9061EE77-8247-4070-A95F-C0A0BA690FE7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EBD54229-BDEC-4458-8BAD-9F72552B70ED}
+	EndGlobalSection
+EndGlobal
