@@ -25,5 +25,23 @@ namespace Employee_RESTAPI_test
             }
         }
 
+        [Test]
+        //uc2 post method
+        public void EmployeeDetails_POSTmethod()
+        {
+            restClient = new RestClient("http://localhost:3000");
+            RestRequest request = new RestRequest("/employees", Method.Post);
+            //JObject jObjectbody= new JObject();
+            //jObjectbody.Add("name", "Sandeep");
+            //jObjectbody.Add("salary", "26000");
+            var body = new Employee_Model { id = 6, name = "Sandeep", salary = "26000" };
+            request.AddParameter("application/json", body, ParameterType.RequestBody);
+            RestResponse response = restClient.Execute(request);
+            Assert.AreEqual(response.StatusCode, HttpStatusCode.Created);
+            Employee_Model emp = JsonConvert.DeserializeObject<Employee_Model>(response.Content);
+            Assert.AreEqual("Sandeep", emp.name);
+            Assert.AreEqual("26000", emp.salary);
+            Console.WriteLine(response.Content);
+        }
     }
 }
