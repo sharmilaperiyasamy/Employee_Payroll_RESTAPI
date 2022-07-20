@@ -43,5 +43,24 @@ namespace Employee_RESTAPI_test
             Assert.AreEqual("26000", emp.salary);
             Console.WriteLine(response.Content);
         }
+        [Test]
+        public void addingMultiplevalues()
+        {
+            restClient = new RestClient("http://localhost:3000");
+            List<Employee_Model> employee = new List<Employee_Model>();
+            employee.Add(new Employee_Model { id = 7, name = "Keerthi", salary = "26500" });
+            employee.Add(new Employee_Model { id = 8, name = "Kumar", salary = "27000" });
+            employee.ForEach(body =>
+            {
+                RestRequest request = new RestRequest("/employees", Method.Post);
+                request.AddParameter("application/json", body, ParameterType.RequestBody);
+                RestResponse response = restClient.Execute(request);
+                Assert.AreEqual(response.StatusCode, HttpStatusCode.Created);
+                Employee_Model emp = JsonConvert.DeserializeObject<Employee_Model>(response.Content);
+                Assert.AreEqual(body.name, emp.name);
+                Assert.AreEqual(body.salary, emp.salary);
+                Console.WriteLine(response.Content);
+            });
+        }
     }
 }

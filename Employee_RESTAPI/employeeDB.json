@@ -29,6 +29,16 @@
       "id": 6,
       "name": "Sandeep",
       "salary": "26000"
+    },
+    {
+      "id": 7,
+      "name": "Keerthi",
+      "salary": "26500"
+    },
+    {
+      "id": 8,
+      "name": "Kumar",
+      "salary": "27000"
     }
   ]
 }
